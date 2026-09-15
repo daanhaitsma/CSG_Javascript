@@ -6,11 +6,7 @@ function setup() {
 }
 
 function draw() {
-    if (mouseIsPressed) {
-        background('lightgreen');
-    } else {
-        background('lightcoral');
-    }
+    background('lightgreen');
 
     frameRate(2);
     teller.teken();
