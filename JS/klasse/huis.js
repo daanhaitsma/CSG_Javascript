@@ -1,3 +1,5 @@
+// https://www.livehome3d.com/assets/img/articles/blueprint-makers/blueprint@2x.jpg
+
 class Huis {
     postcode = null;
     huisnummer = null;
