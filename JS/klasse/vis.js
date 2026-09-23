@@ -58,9 +58,6 @@ var vis2 = {
 function draw() {
     background('blue');
 
-    fill('brown');
-    circle(mouseX, mouseY, 35);
-
     vis1.beweeg();
     vis1.teken();
 
