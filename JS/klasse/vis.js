@@ -23,16 +23,47 @@ class Vis {
     };
 }
 
-var vis = new Vis(100 , 100, 'orange');
+var vis1 = {
+    x: 100,
+    y: 100,
+    kleur: 'orange',
+    
+    teken() {
+        fill(this.kleur);
+        circle(this.x, this.y, 35);
+    },
 
-var vis2 = new Vis(200, 200, 'yellow');
+    beweeg() {
+        this.x += random(-10, 10);
+        this.y += random(-10, 10);
+    }
+};
+
+var vis2 = {
+    x: 50,
+    y: 400,
+    kleur: 'orange',
+    
+    teken() {
+        fill(this.kleur);
+        circle(this.x, this.y, 35);
+    },
+    
+    beweeg() {
+        this.x += random(-10, 10);
+        this.y += random(-10, 10);
+    }
+};
 
 function draw() {
     background('blue');
 
-    vis.teken();
-    vis.beweeg();
+    fill('brown');
+    circle(mouseX, mouseY, 35);
 
-    vis2.teken();
+    vis1.beweeg();
+    vis1.teken();
+
     vis2.beweeg();
+    vis2.teken();
 }
