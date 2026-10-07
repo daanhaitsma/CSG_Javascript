@@ -3,6 +3,7 @@ const canvasSize = 450;
 
 
 
+
 const waves = [
   {yMin: 160, yMax: 180, x: 10, y: 170, width: 200, direction: -1},
   {yMin: 170, yMax: 210, x: 50, y: 200, width: 400, direction: -1},
