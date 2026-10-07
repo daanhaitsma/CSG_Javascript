@@ -5,6 +5,7 @@ function setup() {
     frameRate(5)
 }
 
+
 class Vis {
     constructor(x, y, kleur) {
         this.x = x;
