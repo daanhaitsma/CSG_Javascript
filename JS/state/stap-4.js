@@ -25,37 +25,40 @@ class Spel {
 
   verwerkInvoer() {
     console.log('key: '+key+'   keyCode: '+keyCode);
-    // else if: per toetsaanslag mag maar één toestand reageren
+
     if (this.toestand == 'begin') {
-      // spatie start het spel
+      // Spatie
       if (keyCode == 32) {
         this.toestand = 'spelen';
       }
     }
-    else if (this.toestand == 'spelen') {
-      // spatie: level gehaald
-      if (keyCode == 32) {
+
+    if (this.toestand == 'spelen') {
+      if (key == 'v') {
         this.score += round(random(1,10));
         this.toestand = 'levelGehaald';
       }
+
       if (key == 'w') {
         this.gewonnen = true;
         this.toestand = 'einde';
       }
+
       if (key == 'l') {
         this.gewonnen = false;
         this.toestand = 'einde';
       }
     }
-    else if (this.toestand == 'levelGehaald') {
-      // spatie start het volgende level
+
+    if (this.toestand == 'levelGehaald') {
+      // Spatie
       if (keyCode == 32) {
         this.volgendeLevel();
       }
     }
-    else if (this.toestand == 'einde') {
-      // spatie start een nieuw spel
-      if (keyCode == 32) {
+
+    if (this.toestand == 'einde') {
+      if (key == 'n') {
         this.nieuwSpel();
       }
     }
@@ -99,17 +102,17 @@ class Spel {
   tekenSpeelScherm() {
     background('#c4bfea');
     this.tekenScorebord();
-    this.tekenTekst('Dit is level '+this.level+'.\nDruk W om te winnen, L om te verliezen, of\nspatie om naar het volgende level te gaan.','black');
+    this.tekenTekst('Dit is level '+this.level+'.\nDruk W om te winnen, L om te verliezen, of\nV om naar het volgende level te gaan.','black');
   }
 
   tekenWinScherm() {
     background('#198B26');
-    this.tekenTekst('Je hebt gewonnen!\nJe score: '+this.score+'.\n\nDruk op spatie om een nieuw spel te starten','white');
+    this.tekenTekst('Je hebt gewonnen!\nJe score: '+this.score+'.\n\nDruk op n om een nieuw spel te starten','white');
   }
 
   tekenVerliesScherm() {
     background('#B50016');
-    this.tekenTekst('Je hebt verloren!\nJe score: '+this.score+'.\n\nDruk op spatie om een nieuw spel te starten','white');
+    this.tekenTekst('Je hebt verloren!\nJe score: '+this.score+'.\n\nDruk op n om een nieuw spel te starten','white');
   }
 
   tekenEindScherm() {

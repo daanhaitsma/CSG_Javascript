@@ -23,22 +23,23 @@ class Spel {
 
   verwerkInvoer() {
     console.log('key: '+key+'   keyCode: '+keyCode);
-    // else if: per toetsaanslag mag maar één toestand reageren
+
     if (this.toestand == 'begin') {
-      // spatie start het spel
+      // Spatie
       if (keyCode == 32) {
         this.toestand = 'spelen';
       }
     }
-    else if (this.toestand == 'spelen') {
-      // spatie: level gehaald
-      if (keyCode == 32) {
+
+    if (this.toestand == 'spelen') {
+      if (key == 'v') {
         this.score += round(random(1,10));
         this.toestand = 'levelGehaald';
       }
     }
-    else if (this.toestand == 'levelGehaald') {
-      // spatie start het volgende level
+
+    if (this.toestand == 'levelGehaald') {
+      // Spatie
       if (keyCode == 32) {
         this.volgendeLevel();
       }
@@ -83,7 +84,7 @@ class Spel {
   tekenSpeelScherm() {
     background('#c4bfea');
     this.tekenScorebord();
-    this.tekenTekst('Dit is level '+this.level+'.\nDruk spatie om naar het volgende level te gaan.','black');
+    this.tekenTekst('Dit is level '+this.level+'.\nDruk V om naar het volgende level te gaan.','black');
   }
 
   teken() {

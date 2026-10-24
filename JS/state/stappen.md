@@ -21,12 +21,12 @@ Met het toetsenbord ga je van de ene toestand naar de andere:
                        +--------spatie---------+
                        |                       |
                        v                       |
-'begin' --spatie--> 'spelen' --spatie--> 'levelGehaald'
+'begin' --spatie--> 'spelen' ----V----> 'levelGehaald'
    ^                   |
    |                   | W: gewonnen = true
    |                   | L: gewonnen = false
    |                   v
-   +----spatie-----  'einde'
+   +-------N-------  'einde'
 ```
 
 ---
@@ -47,11 +47,11 @@ De toestand van het spel staat in één variabele. Een toets laat het spel naar 
 
 ## Stap 2 – Levels (`stap-2.js`)
 ### Resultaat
-Door steeds op spatie te drukken ga je van het speelscherm naar het tussenscherm en dan naar level 2, 3, etc.
+Met V ga je van het speelscherm naar het tussenscherm, en met spatie daarna naar level 2, 3, etc.
 ### Kern
 Het levelnummer wordt verhoogd, en dat zie je terug in de tekst op het speelscherm.
 
-Voor het controleren van de invoer is een `else if` nodig, omdat de toestand binnen `verwerkInvoer()` verandert. Met losse `if`s zou dezelfde toetsaanslag ook de volgende toestand meteen activeren.
+De toestand verandert binnen `verwerkInvoer()`, en de losse `if`s worden van boven naar beneden gecontroleerd. Daarom gebruikt het speelscherm V in plaats van spatie: anders zou dezelfde toetsaanslag ook de volgende toestand meteen activeren.
 
 
 
@@ -67,7 +67,7 @@ Een grijze balk bovenin met de score en de hartjes
 ### Resultaat
 - W geeft een groen winscherm
 - L geeft een rood verliesscherm
-- Daarna brengt spatie je weer terug naar het beginscherm voor een nieuw spel
+- Daarna brengt N je weer terug naar het beginscherm voor een nieuw spel
 ### Kern
 Het spel kan beëindigd en daarna volledig gereset worden.
 
